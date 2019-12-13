@@ -1,0 +1,44 @@
+{
+    "name": "aomanansala/package-practice",
+    "description": "A demo package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alvin Manansala",
+            "email": "aomanansala@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "AlvinManansala\\PackagePractice\\": "src"
+        },
+        "classmap": [
+            "database/factories"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+          "AlvinManansala\\PackagePractice\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+      "laravel": {
+            "providers": [
+              "AlvinManansala\\PackagePractice\\BlogPackageServiceProvider"
+            ],
+            "aliases": {
+                "Calculator": "AlvinManansala\\PackagePractice\\Facades\\Calculator"
+            }
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.4"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-f": "vendor/bin/phpunit --filter"
+    }
+}
